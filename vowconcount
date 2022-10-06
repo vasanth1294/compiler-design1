@@ -1,0 +1,17 @@
+%{
+int vow=0;
+int con=0;
+%}
+%%
+[aeiouAEIOU] {vow++;}
+[a-zA-Z] {con++;}
+%%
+int yywrap(){}
+int main()
+{
+printf("enter the string to count vowels and consonants:");
+yylex();
+printf("no of vowels is:%d\n",vow);
+printf("no of consosnants is :%d\n",con);
+return 0;
+}
