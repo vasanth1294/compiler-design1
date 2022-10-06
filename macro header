@@ -16,7 +16,7 @@ yylex();
 printf("no of macros =%d\n",nmacro);
 printf("no of header=%d\n",nheader);
 fclose(yyin);
-}
+}}
 
 
 
