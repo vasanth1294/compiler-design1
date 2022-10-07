@@ -1,0 +1,21 @@
+%{
+#include<stdio.h>
+int valid=0;
+%}
+%%
+([_]|[a-z]+[(.)*]|[a-z]) {valid=1;}
+%%
+int yywrap(){
+return 1;
+}
+int main(int argc,int argv[]){
+printf("enter the identifer to check to valid or not:");
+yylex();
+if(valid==1){
+printf("\nvalid");
+}
+else{
+printf("\ninvalid");
+}
+return 0;
+}
