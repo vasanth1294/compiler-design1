@@ -1,0 +1,16 @@
+%{
+#include<stdio.h>
+%}
+%%
+([//](.)*) { printf("\ngiven line is comment"); }
+([/*](.)*[*/]) { printf("\ngiven line is comment"); }
+.+ { printf("\ngiven line is not a comment:"); }
+%%
+int yywrap(){
+return 1;
+}
+int main(int argc,char*argv[]){
+printf("enter the line:");
+yylex();
+return 0;
+}
