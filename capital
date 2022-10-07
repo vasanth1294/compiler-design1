@@ -1,0 +1,15 @@
+%{
+#include<stdio.h>
+%}
+%%
+[A-Z]+[ \t\n\.\,] { printf("%s",yytext); }
+.            ;
+%%
+int yywrap(){
+return 1;
+}
+int main(int argc,char*argv[]){
+printf("enter the word:");
+yylex();
+return 0;
+}
